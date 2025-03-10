@@ -1,0 +1,25 @@
+const Colors={
+ ButtonColor:'#0F8B83',
+ BackColor:'#05877E',
+ white:'#FFFFFF',
+ CheckColor:'#0D635D',
+ black:'#151415',
+ Red:'#D82E04',
+ Login:'#379F98',
+ RegisterBack:'#73BCB7',
+ back:'#379F98',
+ registerText:'#334155',
+ gray:'#787878',
+ InputColor:'#64748B',
+ rectangleBorder:'#454545',
+ rectanglefill:'#333333',
+Hello:'#FFFFFF66',
+dateColor:'#EBEBEBB8',
+backColor:'#272727',
+depositeRec:'#303030',
+starting:'#C5C5C5',
+background:'#212121',
+grayType:'#333333',
+inactivecolor:'#334155'
+};
+export default Colors
