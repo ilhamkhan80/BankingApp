@@ -9,7 +9,7 @@ const Styles = StyleSheet.create({
      width:'100%',
      height:158,
      alignSelf:'center',
-     marginTop:'10%',
+     marginTop:'19%',
     },
     MainImage:{
         width:'100%',
@@ -19,16 +19,17 @@ const Styles = StyleSheet.create({
         fontFamily:theme.MEDIUM,
         fontSize:10,
         color:Colors.white,
-        bottom:'65%',
-        marginLeft:'10%',
-        marginTop:'40%'
+        bottom:'60%',
+        marginLeft:'15%',
+        marginTop:'40%',
+        
     },
     Amount:{
         fontFamily:theme.BOLD,
         fontSize:26,
         color:Colors.white,
-        bottom:'65%',
-        marginLeft:'10%',
+        bottom:'61%',
+        marginLeft:'15%',
 
 
     },
@@ -36,7 +37,7 @@ const Styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         bottom:'60%',
-        marginRight:'1%',
+        marginLeft:'4%',
         justifyContent:'space-around'
 
     },

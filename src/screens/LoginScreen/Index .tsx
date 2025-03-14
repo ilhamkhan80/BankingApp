@@ -8,6 +8,7 @@ import CustomButton from '../../components/Custombutton/Index';
 import ReactNativeBiometrics from 'react-native-biometrics';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import Colors from '../../themes/Colors/Index';
 
 const LoginScreen = () => {
     type RootStackParamList = {
@@ -18,6 +19,9 @@ const LoginScreen = () => {
     const navigation = useNavigation<NavigationProp>(); const rnBiometrics = new ReactNativeBiometrics();
     const [steps, setSteps] = useState("Login");
     const [checked, setChecked] = useState(false);
+    const [checked2, setChecked2] = useState(false);
+
+
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
     const [show, setShow] = useState(true);
@@ -65,7 +69,7 @@ const LoginScreen = () => {
             isValid = false;
         }
         if (!signUpEmail.trim()) {
-            setSignUpEmailError("All fields are required.");
+            setSignUpEmailError("Email is required.");
             isValid = false;
         }
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -137,10 +141,10 @@ const LoginScreen = () => {
         } else if (!/^[A-Za-z\s]+$/.test(name)) {
             setFullNameError("Full Name should only contain letters.");
         } else {
-            setFullNameError(""); 
+            setFullNameError("");
         }
     };
-    
+
 
 
 
@@ -176,8 +180,8 @@ const LoginScreen = () => {
             case "Login":
                 return (
                     <ImageBackground
-                        resizeMode="contain"
-                        style={[Styles.BackGroundImage, { height: 590, top: -10 }]}
+                        resizeMode="stretch"
+                        style={Styles.BackGroundImage}
                         source={require('../../images/Rectangle.png')}>
                         <View>
                             <Text style={Styles.LoginAccountText}>Login to Your Account</Text>
@@ -198,26 +202,6 @@ const LoginScreen = () => {
                                     </View>
                                 ) : null}
                             </View>
-
-                            {/* <View style={Styles.CustomInputSrtyle}>
-                                <CustomInput
-                                    placeholder={'Password'}
-                                    secureTextEntry={isPasswordVisible}
-                                    
-                                    onChangeText={(text) => {
-                                        setLoginPassword(text)}}
-                                    addRight={
-                                        <TouchableOpacity
-                                        onPress={() => {
-                                            setIsPasswordVisible(!isPasswordVisible);
-                                            console.log("LOgin Password Visibility:", !isPasswordVisible); 
-                                        }}>
-                                        <Image style={Styles.EyeImage} source={isPasswordVisible ? require('../../images/eye.png') : require('../../images/eyeoff.png')} />
-                                    </TouchableOpacity>
-                                    }
-                                    addLeft={<Image style={Styles.PassImage} source={require('../../images/password.png')} />}
-                                />
-                            </View> */}
                             <View>
                                 <View style={Styles.inputContainer}>
                                     <View>
@@ -258,21 +242,21 @@ const LoginScreen = () => {
                                 </TouchableOpacity>
                                 <Text style={Styles.CheckBoxText}>Remember me</Text>
                                 <TouchableOpacity >
-                                    <Text style={Styles.ForGotStyle}>    Forget Password?</Text>
+                                    <Text style={Styles.ForGotStyle}>   Forget Password?</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={Styles.ButtonStyle}>
                                 <CustomButton title='Login' onPress={handleLogin} />
-                            </View>
-                        </View>
+                            </View> 
+                        </View> 
                     </ImageBackground>
                 );
 
             case "Register":
                 return (
                     <ImageBackground
-                        resizeMode="contain"
-                        style={[Styles.BackGroundImage, { height: 590, top: -10 }]}
+                        resizeMode="stretch"
+                        style={Styles.BackGroundImage}
                         source={require('../../images/Rectangle.png')}>
                         <View>
                             <Text style={Styles.LoginAccountText}>Create Your Account</Text>
@@ -313,18 +297,6 @@ const LoginScreen = () => {
                                 ) : null}
                             </View>
 
-                            {/* <View style={Styles.CustomInputSrtyle}>
-                                <CustomInput
-                                    placeholder={'Password'}
-                                    value={null}
-                                    secureTextEntry={!isPasswordVisible}
-                                    addRight={
-                                        <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
-                                            <Image style={Styles.EyeImage} source={isPasswordVisible ? require('../../images/eye.png') : require('../../images/eyeoff.png')} />
-                                        </TouchableOpacity>}
-                                    addLeft={<Image style={Styles.PassImage} source={require('../../images/password.png')} />}
-                                />
-                            </View> */}
                             <View style={Styles.inputContainer}>
                                 <View>
                                     <Image style={Styles.PassImage} source={require('../../images/password.png')} />
@@ -352,8 +324,8 @@ const LoginScreen = () => {
                                 </View>
                             ) : null}
                             <View style={Styles.CheckBoxStyle}>
-                                <TouchableOpacity onPress={() => setChecked(!checked)}>
-                                    <Image style={Styles.CheckTrue} source={checked ? require('../../images/checktrue.png') : require('../../images/checkfalse.png')} />
+                                <TouchableOpacity onPress={() => setChecked2(!checked2)}>
+                                    <Image resizeMode='contain' style={Styles.CheckTrue} source={checked2 ? require('../../images/checktrue.png') : require('../../images/checkfalse.png')} />
                                 </TouchableOpacity>
                                 <Text style={Styles.CheckBoxText}>
                                     I agree with the terms and conditions by creating an{"\n"}account
@@ -363,11 +335,7 @@ const LoginScreen = () => {
                                 <CustomButton
                                     onPress={handleSignup}
                                     title='Create Account' />
-                                {/* {error && (
-                                    <View style={Styles.SignupErrorSection}>
-                                        <Text style={Styles.ErrorText}>{error}</Text>
-                                    </View>
-                                )} */}
+
                             </View>
                         </View>
                     </ImageBackground>
@@ -378,50 +346,42 @@ const LoginScreen = () => {
 
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
-            <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
-                <View style={Styles.MainViewStyle}>
-                    <View style={Styles.TextsView}>
-                        <Text style={Styles.HelloTextStyle}>Hello, There</Text>
-                        <Text style={Styles.WelcomTextStyle}>Welcome Back</Text>
-                        <View style={Styles.LoginViewStyle}>
-                            <TouchableOpacity
-                                onPress={() => setSteps('Login')}
-                                style={steps === "Login" ? Styles.LoginTextStyle : Styles.RegisterViewStyle}>
-                                <Text style={steps === 'Login' ? Styles.LoginText : Styles.Register}>Login</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                onPress={() => setSteps('Register')}
-                                style={steps === 'Register' ? Styles.LoginTextStyle : Styles.RegisterViewStyle}>
-                                <Text style={steps === 'Register' ? Styles.LoginText : Styles.Register1}>Register</Text>
-                            </TouchableOpacity>
+        <View style={Styles.MainViewStyle}>
+                        <View style={Styles.TextsView}>
+                            <Text style={Styles.HelloTextStyle}>Hello, There</Text>
+                            <Text style={Styles.WelcomTextStyle}>Welcome Back</Text>
+                            <View style={Styles.LoginViewStyle}>
+                                <TouchableOpacity
+                                    onPress={() => setSteps('Login')}
+                                    style={steps === "Login" ? Styles.LoginTextStyle : Styles.RegisterViewStyle}>
+                                    <Text style={steps === 'Login' ? Styles.LoginText : Styles.Register}>Login</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => setSteps('Register')}
+                                    style={steps === 'Register' ? Styles.LoginTextStyle : Styles.RegisterViewStyle}>
+                                    <Text style={steps === 'Register' ? Styles.LoginText : Styles.Register}>Register</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
-                    </View>
-                    {renderDetails()}
-                </View>
-            </ScrollView>
-            <Modal animationType="slide" transparent={true} visible={isModalVisible} onRequestClose={() => setIsModalVisible(false)}>
-                <View style={Styles.modalContainer}>
-                    <ImageBackground resizeMode="contain" style={[Styles.BackGroundImage, { top: 150 }]} source={require('../../images/modal.png')}>
-                        <View style={{ marginTop: 25 }}>
-                            <Text style={Styles.EnableBioMetric}>Enable Biometrics?</Text>
-                            <Text style={Styles.BioMetricDetailText}>Use Biometrics to sign in quickly and securely</Text>
-                            <Image style={Styles.BiometricImageStyle} source={require('../../images/biometric.png')} />
-                            <CustomButton title={'Enable'} onPress={handleFingerprintAuth} />
+                        {renderDetails()}
+                <Modal animationType="slide" transparent={true} visible={isModalVisible} onRequestClose={() => setIsModalVisible(false)}>
+                    <View style={Styles.modalContainer}>
+                        <ImageBackground resizeMode="stretch" style={
+                            [Styles.BackGroundImageModal, 
+                            ]} source={require('../../images/modal.png')}>
+                                <Text style={Styles.EnableBioMetric}>Enable Biometrics?</Text>
+                                <Text style={Styles.BioMetricDetailText}>Use Biometrics to sign in quickly and securely</Text>
+                                <Image style={Styles.BiometricImageStyle} source={require('../../images/biometric.png')} />
+                                <CustomButton title={'Enable'} onPress={handleFingerprintAuth} />
 
-                            <TouchableOpacity onPress={() => setIsModalVisible(false)}>
-                                <Text style={Styles.SkipNow}>Skip for now</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </ImageBackground>
-                </View>
-            </Modal>
-        </KeyboardAvoidingView>
+                                <TouchableOpacity onPress={() => {setIsModalVisible(false),navigation.navigate('Bottom')}}>
+                                    <Text style={Styles.SkipNow}>Skip for now</Text>
+                                </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
+                </Modal>
+        </View>
     );
 };
 
 export default LoginScreen;
-
-// function setError(arg0: string) {
-//     throw new Error('Function not implemented.');
-// }

@@ -12,18 +12,21 @@ const Styles = StyleSheet.create({
     LeftStyle: {
         width: 33,
         height: 33.9,
-        right: 85
+        right: '280%',
+        marginTop:'10%'
     },
     bellstyle: {
         width: 33,
         height: 33.9,
-        left: 83
+        left:'280%',
+        marginTop:'10%'
+
     },
     RecomendationView:{
         flexDirection:'row',
         alignItems:'center',
         marginLeft:'8%',
-        marginTop:'7%'
+        marginTop:'9%'
     },
     OngoingView:{
         marginLeft:'7%'
@@ -48,7 +51,8 @@ const Styles = StyleSheet.create({
     },
     RectangleStyle:{
         width:'90%',
-        height:118,
+        paddingHorizontal:5,
+        paddingVertical:0,
         borderRadius:12,
         marginTop:'8%',
         
@@ -59,7 +63,7 @@ const Styles = StyleSheet.create({
     },
     FormTextView:{
         marginLeft:'10%',
-        marginTop:'5%',
+        marginTop:'8%',
         alignItems:'center',
         flexDirection:'row'
     },
@@ -127,12 +131,10 @@ const Styles = StyleSheet.create({
 
     },
     GraphImage:{
-        width:336,
+        width:'100%',
         height:240,
-        // height:'70%',
         alignSelf:'center',
         marginTop:'2%',
-        marginLeft:'3%',
     },
     StaticText:{
         fontFamily:theme.MEDIUM,

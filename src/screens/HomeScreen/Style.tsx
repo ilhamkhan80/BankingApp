@@ -1,7 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Dimensions, PixelRatio, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import theme from '../../utils/Constants'
 import Colors from '../../themes/Colors/Index'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+const { width, height } = Dimensions.get('window');
+
+const fontSize = (size: number) => size / PixelRatio.getFontScale(); 
 const Styles = StyleSheet.create({
     MainView: {
         flex: 1,
@@ -9,42 +14,43 @@ const Styles = StyleSheet.create({
 
     },
     ImageBackground: {
-        width: '100%',
-        height: 168,
-        top: -5
+        width: wp('100%'),
+        height: hp('22%'),
     },
     PersonImage: {
-        width: 55,
-        height: 55,
+        width: wp('20%'),
+        height: hp('8%'),
+        marginLeft:wp("5%"),
+        marginTop:hp("4%")
     },
     ImageView: {
-        marginTop: '10%',
-        marginLeft: '7%',
+        marginTop: hp('1%'),
 
     },
     ImageTextView: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     DetailStyle: {
         fontFamily: theme.REGULAR,
-        fontSize: 12,
+        fontSize: fontSize(12),
         color: Colors.white,
-        marginLeft: '10%',
-        top: -5
+        marginLeft: wp('3%'),
     },
     NameStyle: {
         fontFamily: theme.BOLD,
-        fontSize: 16,
+        fontSize:fontSize (16),
         color: Colors.white,
-        marginTop: '20%',
-        marginLeft: '10%'
+        marginTop:hp ('5%'),
+        marginLeft: wp('3%'),
     },
     BellStyle: {
         width: 33,
-        height: 33.8,
-        left:'50%',
-        top:22
+        height:33,
+        marginTop:hp('5%'),
+        marginLeft: wp('9%'),
+
+        
       
     },
     BellView: {
@@ -56,15 +62,16 @@ const Styles = StyleSheet.create({
         marginLeft: '8%'
     },
     RectangleView: {
-        width: '90%',
+        width: width * 0.87, 
         backgroundColor: Colors.rectanglefill,
         borderWidth: 1,
         borderColor: Colors.rectangleBorder,
-        height: 210,
-        bottom: '7%',
+        bottom: height * 0.07,
         alignSelf: 'center',
         borderRadius: 12,
-        elevation: 3
+        elevation: 3,
+        padding:1
+        
     },
     FlybankStyle: {
         fontFamily: theme.REGULAR,
@@ -163,8 +170,7 @@ const Styles = StyleSheet.create({
     },
     ListViewStyle: {
         flexDirection: 'row',
-        // justifyContent: 'space-between',
-        padding: 4,
+        justifyContent: 'space-around',
         marginTop:'4%'
     },
     ListView: {
@@ -310,25 +316,40 @@ const Styles = StyleSheet.create({
         fontSize:13
     },
     SpecialPromoView:{
-        marginTop:'9%',
+        // marginTop:'9%',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        top:hp('-4'),
+        marginLeft:wp("7%")
 
     },
     SeeAll:{
         fontFamily:theme.MEDIUM,
         fontSize:12,
-        color:Colors.ButtonColor
+        color:Colors.ButtonColor,
+        marginRight:wp("7%"),
+        
+
     },
     RectangleImageView:{
-        marginTop:'6%'
+        // marginTop:'6%'
+        marginLeft:wp("3%")
     },
+    ImageRectangle:
+    { 
+        width:wp( '89%'),
+         height:hp(" 17"),
+         alignSelf:'center',
+         top:hp("-2%")
+
+     },
     PhoneImage:{
-        width:'44%',
-        height:134,
+        width:wp('40%'),
+        height:hp('19%'),
         borderRadius:12,
-        top:-12
+        top:hp('-1'),
+        // marginLeft:wp("1%")
     },
     ViewStyle:{
         alignItems:'center',
@@ -340,13 +361,14 @@ const Styles = StyleSheet.create({
         fontSize:10,
         color:Colors.white,
         left:20,
+        top:3
         // top:-46
     },
     CashBack:{
         color:Colors.white,
         fontFamily:theme.EXTRABOLD,
         fontSize:16,
-        top:-5,
+        top:1,
         textAlign:'center',
         left:20,
 
@@ -356,24 +378,25 @@ const Styles = StyleSheet.create({
         fontFamily:theme.BOLD,
         fontSize:39,
         left:30,
-        top:-15
+        top:-10
     },
     OfferView:{
-        flexDirection:'row'
+        flexDirection:'row',
+        alignItems:'center'
     },
     OffTextStyle:{
         fontFamily:theme.BOLD,
         fontSize:13,
         color:Colors.white,
-        top:15,
-        left:29
+        left:29,
+        marginTop:'8%'
     },
     TextStylePeriod:{
         fontSize:8,
         color:'#FFFFFF',
-        left:25,
+        left:wp("6"),
         fontWeight:500,
-        top:-20
+        top:hp("-2")
     },
     Person1Style:{
         width:48,
@@ -382,13 +405,16 @@ const Styles = StyleSheet.create({
         
     },
     ListStyle:{
-        width:'100%',
-        marginTop:'4%',
-        height:71,
+        width:wp('92%'),
+        // marginTop:'4%',
+        height:hp("10%"),
         borderRadius:12,
         backgroundColor:Colors.rectanglefill,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        alignSelf:'center',
+        marginLeft:wp("2%"),
+        top:hp("-2")
     },
     PersonTextStye:{
         color:Colors.white,
@@ -406,11 +432,17 @@ const Styles = StyleSheet.create({
         fontFamily:theme.SEMIBOLD,
         fontSize:15,
         color:Colors.ButtonColor,
-        left:60
+        // left:60
+        marginLeft:'28%'
     },
     FillCircle:{
         width:35,
         height:35.85
+    },
+    LineImage:{
+        width:26,
+        left:25,
+        top:-10
     }
 
 

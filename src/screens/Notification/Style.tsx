@@ -11,7 +11,7 @@ const Styles = StyleSheet.create({
     LeftStyle: {
         width: 33,
         height: 33.9,
-        right: 79
+        right: '270%'
     },
     TodayText:{
         fontFamily:theme.MEDIUM,

@@ -5,25 +5,21 @@ import CustomLabel from '../../components/CustomLabel/Index'
 import { Image } from 'react-native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
-
 const DepositeScreen= () => {
     type RootStackParamList = {
         Bottom: undefined;
         DepositeScreen: undefined;
         Notification: undefined;
     };
-    
     type NavigationProp = StackNavigationProp<RootStackParamList, 'Notification'>;
     const navigation = useNavigation<NavigationProp>();
-    
     const [focused, setFocused] = useState('Recommendation')
     return (
         <View style={Styles.MainView}>
             <CustomLabel title='Deposit' addLeft={
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Image style={Styles.LeftStyle} source={require('../../images/left.png')} />
-                </TouchableOpacity>
-            }
+                </TouchableOpacity>}
                 addRight={
                 <TouchableOpacity onPress={() => navigation.push('Notification')}>
                     <Image style={Styles.bellstyle} source={require('../../images/rightbell.png')} />
@@ -76,7 +72,7 @@ const DepositeScreen= () => {
                 <Text style={Styles.StaticDeposite}>My Statistic Deposit</Text>
             </View>
             <View>
-                <ImageBackground style={Styles.GraphImage} source={require('../../images/graph.png')}>
+                <ImageBackground resizeMode='stretch'style={Styles.GraphImage} source={require('../../images/graph.png')}>
                 <View>
                     <Text style={Styles.StaticText}>Statistic Deposit</Text>
                 </View>

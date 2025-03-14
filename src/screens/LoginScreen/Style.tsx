@@ -1,183 +1,172 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import theme from '../../utils/Constants'
-import Colors from '../../themes/Colors/Index'
+import { StyleSheet, Dimensions, PixelRatio } from 'react-native';
+import theme from '../../utils/Constants';
+import Colors from '../../themes/Colors/Index';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+const { width, height } = Dimensions.get('window');
+
+const fontSize = (size: number) => size / PixelRatio.getFontScale(); 
+
 const Styles = StyleSheet.create({
     HelloTextStyle: {
         fontFamily: theme.REGULAR,
-        fontSize: 14,
+        fontSize: fontSize(14),
         color: Colors.Hello,
         textAlign: 'center',
-        marginTop: '7%'
+        marginTop: hp('2%') 
     },
     MainViewStyle: {
         backgroundColor: Colors.BackColor,
-        // flex: 1
-
+        flex: 1,  
     },
     WelcomTextStyle: {
         fontFamily: theme.SEMIBOLD,
-        fontSize: 23,
+        fontSize: fontSize(23),
         color: Colors.white,
         textAlign: 'center',
-        bottom:'3%'
+        marginBottom: hp('2%')
     },
     TextsView: {
-        // width: 311,
-        width:'90%',
-        height:'22%',
-        // height: 170,
+        width: wp('90%'),
+        height: hp('22%'),
         borderWidth: 1,
         borderColor: Colors.back,
         backgroundColor: Colors.back,
-        borderRadius: 23,
+        borderRadius: wp('6%'),
         alignSelf: 'center',
-        marginTop:'15%'
+        marginTop: hp('6%')
     },
     LoginViewStyle: {
         flexDirection: 'row',
         alignItems: 'center',
-        // width: 261,
-        width:'80%',
-        height: 42,
+        width: wp('75%'),
+        height: hp('5.5%'),
         borderWidth: 1,
-        borderRadius: 32,
+        borderRadius: wp('8%'),
         alignSelf: 'center',
         borderColor: Colors.RegisterBack,
         backgroundColor: Colors.RegisterBack,
-        marginTop: '5%'
+        marginTop: hp('1%')
     },
     LoginTextStyle: {
         backgroundColor: Colors.white,
-        width: '53%',
-        height: 42,
-        borderRadius: 48,
+        width: wp('40%'),
+        height: hp('5.5%'),
+        borderRadius: wp('10%'),
     },
     LoginText: {
         textAlign: 'center',
         alignSelf: 'center',
-        top:10,
-        color:Colors.Login,
-        fontFamily:theme.SEMIBOLD,
-        fontSize:12
+        paddingTop: hp('1.3%'),
+        color: Colors.Login,
+        fontFamily: theme.SEMIBOLD,
+        fontSize: fontSize(12)
     },
-    Register:{
-        color:'#334155',
-        fontFamily:theme.REGULAR,
-        fontSize:12,
-        textAlign:'center'
+    Register: {
+        color: '#334155',
+        fontFamily: theme.REGULAR,
+        fontSize: fontSize(12),
+        textAlign: 'center'
     },
-    Register1:{
-        color:'#5B8E92',
-        fontFamily:theme.REGULAR,
-        fontSize:12,
-        textAlign:'center'
+    RegisterViewStyle: {
+        width: wp('35%'),
     },
-    RegisterViewStyle:{
-        width:131, 
+    LoginAccountText: {
+        color: Colors.white,
+        fontFamily: theme.SEMIBOLD,
+        fontSize: fontSize(14),
+        marginTop:wp("8%"),
+        marginLeft: wp('5%'),
     },
-    LoginAccountText:{
-        color:Colors.white,
-        fontFamily:theme.SEMIBOLD,
-        fontSize:14,
-        position:'absolute',
-        top:60,
-        marginLeft:'5%',
-    
+    DetailsStyle: {
+        fontFamily: theme.REGULAR,
+        fontSize: fontSize(12),
+        color: Colors.gray,
+        marginLeft: wp('5%')
     },
-    DetailsStyle:{
-        fontFamily:theme.REGULAR,
-        fontSize:12,
-        color:Colors.gray,
-        position:'absolute',
-        top:80,
-        marginLeft:'5%'
+    BackGroundImage: {
+        width: '100%',
+        height: hp('100%'), 
+        marginTop:wp('10%')
     },
-    BackGroundImage:{ 
-        width: '100%', 
-        // height: '87%',
-        height:590,
-        top:40,
-        
-        
+    BackGroundImageModal:{
+        width: '100%',
+        height: hp('70%'), 
+        marginTop:wp('60%')
     },
-    EmailImage:{
-        width:18,
-        height:14,
-        left:10
+    EmailImage: {
+        width: wp('4.5%'),
+        height: hp('2%'),
+        marginLeft: wp('6%')
     },
-    CustomInputStyle:{
-        top:110
+    CustomInputStyle: {
+        // marginTop: hp('1%')
     },
-    PassImage:{
-        width:12,
-        height:16,
-        left:10
+    PassImage: {
+        width: wp('3%'),
+        height: hp('2%'),
+        marginLeft: wp('6%')
     },
-    EyeImage:{
-        width:18,
-        height:218,
-        resizeMode:'contain',
-        right:10
+    EyeImage: {
+        width: wp('5%'),
+        height: hp('3%'),
+        resizeMode: 'contain',
+        marginRight: wp('4%')
     },
     UserImage:{
-        width:13.5,
-        height:16,
-        left:10
+       width:wp("5%"),
+       height:hp("3%"),
+       resizeMode:"contain",
+       marginLeft: wp('6%')
+
     },
-    CheckBoxStyle: { 
-        flexDirection: 'row', 
+    CheckBoxStyle: {
+        flexDirection: 'row',
         alignItems: 'center',
-        top:115 ,
-        marginLeft:'5%',
-        
-
-
+        marginTop: hp('1%'),
+        marginLeft: wp('5%'),
     },
-    ForGotStyle:{
-        fontFamily:theme.REGULAR,
-        fontSize:12,
-        color:Colors.BackColor,
-        left:'90%'
-        
+    ForGotStyle: {
+        fontFamily: theme.REGULAR,
+        fontSize: fontSize(12),
+        color: Colors.BackColor,
+        marginLeft: wp("28%"),
     },
-    CheckBoxText:{
-        color:Colors.white,
-        fontSize:11,
-        fontFamily:theme.REGULAR,
-        top:2,
-        marginLeft:'6%'
+    CheckBoxText: {
+        color: Colors.white,
+        fontSize: fontSize(11),
+        fontFamily: theme.REGULAR,
+        marginLeft: wp('2%')
     },
-    ButtonStyle:{
-        top:180,
-    
+    ButtonStyle: {
+        marginTop: hp('7%'),
     },
-    EnableBioMetric:{
-     fontFamily:theme.SEMIBOLD,
-     fontSize:20,
-     color:Colors.white,
-     textAlign:'center',
-     top:65
+    EnableBioMetric: {
+        fontFamily: theme.SEMIBOLD,
+        fontSize: fontSize(20),
+        color: Colors.white,
+        textAlign: 'center',
+        marginTop: hp('5%')
     },
-    BioMetricDetailText:{
-        fontFamily:theme.REGULAR,
-        fontSize:12,
-        color:Colors.white,
-        top:70,
-        textAlign:'center',
+    BioMetricDetailText: {
+        fontFamily: theme.REGULAR,
+        fontSize: fontSize(12),
+        color: Colors.white,
+        textAlign: 'center',
+        marginTop: hp('1%'),
     },
-    BiometricImageStyle:{
-        width:224,
-        height:224,
-        alignSelf:'center',
-        marginTop:'20%'
+    BiometricImageStyle: {
+        width: wp('60%'),
+        height: wp('60%'),
+        alignSelf: 'center',
+        marginTop: hp('1%')
     },
-    SkipNow:{
-        fontFamily:theme.SEMIBOLD,
-        fontSize:13,
-        color:Colors.ButtonColor,
-        textAlign:'center',
-        marginTop:'5%'
+    SkipNow: {
+        fontFamily: theme.SEMIBOLD,
+        fontSize: fontSize(13),
+        color: Colors.ButtonColor,
+        textAlign: 'center',
+        marginTop: hp('3%')
     },
     modalContainer: {
         flex: 1,
@@ -185,57 +174,48 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
-    CheckTrue:{
-        width:15,
-        height:15,
-        left:10
+    CheckTrue: {
+        width: wp('4%'),
+        height: hp('2%'),
+        marginLeft: wp('2%')
     },
     ErrorText: {
-        fontSize: 12,
+        fontSize: fontSize(12),
         color: 'red',
     },
     SignupErrorSection: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8,
+        gap: wp('2%'),
         alignSelf: 'center',
-        marginTop: '1%'
+        marginTop: hp('1%')
     },
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: Colors.white,
-        borderRadius: 32,
-        marginTop: '5%',
+        borderRadius: wp('8%'),
+        marginTop: hp('2%'),
         width: '90%',
         height:40,
-        alignSelf: 'center',
-        top:110
-        
-        
-      },
-      textInput: {
-        flex: 1, 
-        fontSize: 12,
+        alignSelf: 'center'
+    },
+    textInput: {
+        flex: 1,
+        fontSize: fontSize(12),
         fontFamily: theme.GLORYMEDIUM,
         color: Colors.InputColor,
-        marginLeft:15
-      },
-      LoginPassError:{
-        top:110,
-        marginLeft:'9%'
+        marginLeft: wp('4%')
+    },
+    LoginPassError: {
+        marginLeft: wp('5%')
+    },
+    LoginEmailError: {
+        marginLeft: wp('5%')
+    },
+    signUpPasswordError: {
+        marginLeft: wp('5%')
+    }
+});
 
-      },
-      LoginEmailError:{
-        marginLeft:'9%'
-
-      },
-      signUpPasswordError:{
-        top:'42%',
-        marginLeft:'9%'
-
-      }
-
-   
-})
-export default Styles
+export default Styles;
