@@ -13,7 +13,6 @@ const CustomLabel = (props:CustomLabelprops) => {
     </View>
   )
 }
-
 export default CustomLabel
 
 const styles = StyleSheet.create({
@@ -22,7 +21,8 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+    width:'90%'
     },
     LabelStyle:{
         fontFamily:theme.SEMIBOLD,

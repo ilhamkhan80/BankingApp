@@ -48,7 +48,7 @@ const Styles = StyleSheet.create({
         width: 33,
         height:33,
         marginTop:hp('5%'),
-        marginLeft: wp('9%'),
+        marginLeft: wp('12%'),
 
         
       
@@ -70,7 +70,7 @@ const Styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 12,
         elevation: 3,
-        padding:1
+        paddingBottom:10
         
     },
     FlybankStyle: {
@@ -171,7 +171,7 @@ const Styles = StyleSheet.create({
     ListViewStyle: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop:'4%'
+        marginTop:'8%'
     },
     ListView: {
         alignItems: 'center',
@@ -361,14 +361,13 @@ const Styles = StyleSheet.create({
         fontSize:10,
         color:Colors.white,
         left:20,
-        top:3
-        // top:-46
+        top:"0%"
     },
     CashBack:{
         color:Colors.white,
         fontFamily:theme.EXTRABOLD,
         fontSize:16,
-        top:1,
+        top:hp(-1),
         textAlign:'center',
         left:20,
 
@@ -378,7 +377,7 @@ const Styles = StyleSheet.create({
         fontFamily:theme.BOLD,
         fontSize:39,
         left:30,
-        top:-10
+        top:hp(-2)
     },
     OfferView:{
         flexDirection:'row',
@@ -389,14 +388,14 @@ const Styles = StyleSheet.create({
         fontSize:13,
         color:Colors.white,
         left:29,
-        marginTop:'8%'
+        top:hp(-1.2)
     },
     TextStylePeriod:{
         fontSize:8,
         color:'#FFFFFF',
         left:wp("6"),
         fontWeight:500,
-        top:hp("-2")
+        top:hp(-2)
     },
     Person1Style:{
         width:48,
@@ -432,8 +431,13 @@ const Styles = StyleSheet.create({
         fontFamily:theme.SEMIBOLD,
         fontSize:15,
         color:Colors.ButtonColor,
-        // left:60
-        marginLeft:'28%'
+        left:wp('18%')
+    },
+    DollarsStyle2:{
+        fontFamily:theme.SEMIBOLD,
+        fontSize:15,
+        color:Colors.ButtonColor,
+        left:wp('23%')   
     },
     FillCircle:{
         width:35,
@@ -442,7 +446,7 @@ const Styles = StyleSheet.create({
     LineImage:{
         width:26,
         left:25,
-        top:-10
+        top:hp(-2.5)
     }
 
 

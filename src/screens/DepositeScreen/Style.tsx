@@ -12,13 +12,13 @@ const Styles = StyleSheet.create({
     LeftStyle: {
         width: 33,
         height: 33.9,
-        right: '280%',
+        // right: '280%',
         marginTop:'10%'
     },
     bellstyle: {
         width: 33,
         height: 33.9,
-        left:'280%',
+        // left:'280%',
         marginTop:'10%'
 
     },

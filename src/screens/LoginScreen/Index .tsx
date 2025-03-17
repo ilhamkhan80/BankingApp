@@ -194,7 +194,7 @@ const LoginScreen = () => {
                                         setLoginEmail(text);
                                         validateEmailOnChange(text);
                                     }}
-                                    addLeft={<Image style={Styles.EmailImage} source={require('../../images/email.png')} />}
+                                    addLeft={<Image resizeMode='contain' style={Styles.EmailImage} source={require('../../images/email.png')} />}
                                 />
                                 {loginEmailError ? (
                                     <View style={Styles.LoginEmailError}>
@@ -205,7 +205,7 @@ const LoginScreen = () => {
                             <View>
                                 <View style={Styles.inputContainer}>
                                     <View>
-                                        <Image style={Styles.PassImage} source={require('../../images/password.png')} />
+                                        <Image resizeMode='contain' style={Styles.PassImage} source={require('../../images/password.png')} />
                                     </View>
                                     <TextInput
                                         value={loginPassword}
@@ -277,8 +277,6 @@ const LoginScreen = () => {
                                     </View>
                                 ) : null}
                             </View>
-
-
                             <View style={Styles.CustomInputStyle}>
                                 <CustomInput
                                     placeholder={'Email'}

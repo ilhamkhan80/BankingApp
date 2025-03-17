@@ -26,21 +26,20 @@ const BottomNavigation = () => {
                 tabBarInactiveTintColor: '#646464',
                 tabBarStyle: {
                     position: 'absolute',
-                    backgroundColor: 'transparent',
+                    backgroundColor: '#303030',
                     borderTopWidth: wp(0),
-                    height: hp('14%'),
+                    height: hp('15%'),
                     overflow: 'hidden',
-
-
+                    // borderTopEndRadius:50,
+                    // borderTopStartRadius:50
                 },
                 tabBarBackground: () => (
-                    <ImageBackground resizeMode='contain'
+                    <ImageBackground 
                         source={require('../images/back.png')}
                         style={styles.backgroundImage}
                     />
                 ),
-            }}
-        >
+            }}>
             <Bottom.Screen
                 name="HOME"
                 component={HomeScreen}
@@ -101,8 +100,6 @@ const BottomNavigation = () => {
                                 ]}
                                 source={require('../images/scan2.png')}
                             />
-
-
                         </View>
                     ),
                 }}

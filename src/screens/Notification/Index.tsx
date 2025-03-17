@@ -15,11 +15,21 @@ const Notification = () => {
     type NavigationProp = StackNavigationProp<RootStackParamList, 'Bottom'>;
     const navigation = useNavigation<NavigationProp>();  return (
     <ScrollView style={Styles.MainView}>
-        <CustomLabel title='Notifications' addLeft={
+        {/* <CustomLabel title='Notifications'
+         addLeft={
             <TouchableOpacity  onPress={()=>navigation.goBack()}>
                 <Image style={Styles.LeftStyle}  source={require('../../images/left.png')}/>
             </TouchableOpacity>
-        }/>
+        }/> */}
+        <View style={Styles.ImageTextStyle}>
+            <TouchableOpacity onPress={()=>navigation.goBack()}>
+            <Image  style={Styles.LeftStyle} source={require('../../images/left.png')}/>
+
+            </TouchableOpacity>
+            <Text style={Styles.LabelStyle}>
+         Notifications
+            </Text>
+        </View>
         <View>
             <Text style={Styles.TodayText}>Today</Text>
         </View>

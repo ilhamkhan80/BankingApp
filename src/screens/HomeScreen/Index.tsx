@@ -176,7 +176,7 @@ const HomeScreen = () => {
                     <Text style={Styles.DateStyle}>29 December 2024</Text>
                 </View>
                 <View>
-                    <Text style={[Styles.DollarsStyle, { left: '10%', }]}>+$ 81.12,00</Text>
+                    <Text style={Styles.DollarsStyle2}>+$ 81.12,00</Text>
                 </View>
             </View>
             

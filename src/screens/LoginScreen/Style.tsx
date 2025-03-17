@@ -2,11 +2,8 @@ import { StyleSheet, Dimensions, PixelRatio } from 'react-native';
 import theme from '../../utils/Constants';
 import Colors from '../../themes/Colors/Index';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
 const { width, height } = Dimensions.get('window');
-
 const fontSize = (size: number) => size / PixelRatio.getFontScale(); 
-
 const Styles = StyleSheet.create({
     HelloTextStyle: {
         fontFamily: theme.REGULAR,
@@ -57,7 +54,7 @@ const Styles = StyleSheet.create({
     LoginText: {
         textAlign: 'center',
         alignSelf: 'center',
-        paddingTop: hp('1.3%'),
+        paddingTop: hp('1.4%'),
         color: Colors.Login,
         fontFamily: theme.SEMIBOLD,
         fontSize: fontSize(12)
@@ -95,7 +92,7 @@ const Styles = StyleSheet.create({
         marginTop:wp('60%')
     },
     EmailImage: {
-        width: wp('4.5%'),
+        width: wp('5%'),
         height: hp('2%'),
         marginLeft: wp('6%')
     },
@@ -118,7 +115,6 @@ const Styles = StyleSheet.create({
        height:hp("3%"),
        resizeMode:"contain",
        marginLeft: wp('6%')
-
     },
     CheckBoxStyle: {
         flexDirection: 'row',

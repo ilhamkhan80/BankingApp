@@ -11,7 +11,7 @@ const Styles = StyleSheet.create({
     LeftStyle: {
         width: 33,
         height: 33.9,
-        right: '270%'
+        marginLeft:'20%'
     },
     TodayText:{
         fontFamily:theme.MEDIUM,
@@ -66,6 +66,19 @@ const Styles = StyleSheet.create({
         color:'#858585',
         fontFamily:theme.REGULAR,
         fontSize:9
+    },
+    LabelStyle:{
+        fontFamily:theme.SEMIBOLD,
+        fontSize:20,
+        color:Colors.white,
+        textAlign:'center',
+        flex:1,
+        marginRight:'20%'
+    },
+    ImageTextStyle:{
+    flexDirection:"row",
+    alignItems:'center',
+    marginTop:"10%",
     }
 })
 export default Styles

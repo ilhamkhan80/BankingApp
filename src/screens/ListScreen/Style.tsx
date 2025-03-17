@@ -1,15 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Dimensions, PixelRatio, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import theme from '../../utils/Constants'
 import Colors from '../../themes/Colors/Index'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
+const { width, height } = Dimensions.get('window');
+
+const fontSize = (size: number) => size / PixelRatio.getFontScale(); 
 
 const Styles = StyleSheet.create({
     RectangleImageStyle:{
-     width:'100%',
-     height:158,
+     width:'93%',
+     height:hp("22%"),
      alignSelf:'center',
      marginTop:'19%',
+     marginLeft:wp('9%')
     },
     MainImage:{
         width:'100%',

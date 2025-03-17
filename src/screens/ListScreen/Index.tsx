@@ -1,11 +1,11 @@
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Styles from './Style'
 import { Image } from 'react-native'
 
 const ListScreen = () => {
     return (
-        <View >
+        <ScrollView >
             <ImageBackground resizeMode='cover' style={Styles.MainImage} source={require('../../images/home2.png')}>
                 <View>
                     <ImageBackground resizeMode='contain' style={Styles.RectangleImageStyle} source={require('../../images/rectangle4.png')} />
@@ -76,7 +76,7 @@ const ListScreen = () => {
                 
             </ImageBackground>
 
-        </View>
+        </ScrollView>
     )
 }
 
