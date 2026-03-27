@@ -16,7 +16,8 @@ const LoginScreen = () => {
     };
     type NavigationProp = StackNavigationProp<RootStackParamList, 'Bottom'>;
 
-    const navigation = useNavigation<NavigationProp>(); const rnBiometrics = new ReactNativeBiometrics();
+    const navigation = useNavigation<NavigationProp>();
+     const rnBiometrics = new ReactNativeBiometrics();
     const [steps, setSteps] = useState("Login");
     const [checked, setChecked] = useState(false);
     const [checked2, setChecked2] = useState(false);

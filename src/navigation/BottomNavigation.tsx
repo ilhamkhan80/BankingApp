@@ -31,7 +31,7 @@ const BottomNavigation = () => {
                     height: hp('15%'),
                     overflow: 'hidden',
                     // borderTopEndRadius:50,
-                    // borderTopStartRadius:50
+                    // borderTopStartRadius:50npxnpn
                 },
                 tabBarBackground: () => (
                     <ImageBackground 
